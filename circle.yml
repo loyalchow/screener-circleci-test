@@ -2,7 +2,7 @@ machine:
   node:
     version: 0.10.36
   hosts:
-    ci.server: 127.0.0.1
+    $CIRCLE_BRANCH.server: 127.0.0.1
 
 dependencies:
   override:
@@ -17,7 +17,7 @@ dependencies:
 test:
   override:
     # start tunnel
-    - ./screener-tunnel-client -apikey="$SCREENER_API_KEY" -host="ci.server:8080":
+    - ./screener-tunnel-client -apikey="$SCREENER_API_KEY" -host="$CIRCLE_BRANCH.server:8080":
         background: true
     # start server
     - npm start:

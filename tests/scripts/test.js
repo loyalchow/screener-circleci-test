@@ -1,7 +1,7 @@
 module.exports = {
   'Demo Test': function(browser) {
     browser
-      .url('http://ci.server:8080')
+      .url(browser.launch_url)
       .execute('/*@screener.snapshot*/', ['Home'])
       .end();
   }
