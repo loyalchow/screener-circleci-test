@@ -6,6 +6,7 @@ module.exports = {
       selenium_host: 'hub.screener.io',
       desiredCapabilities: {
         browserName: 'chrome',
+        build: process.env.CIRCLE_BUILD_NUM,
         screener: {
           name: 'Demo Test',
           apiKey: process.env.SCREENER_API_KEY,
