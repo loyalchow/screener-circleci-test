@@ -2,9 +2,9 @@ module.exports = {
   src_folders: [__dirname + '/scripts'],
   test_settings: {
     default: {
-      launch_url: 'https://screener.io/',
-      selenium_port: 8888,
-      selenium_host: 'dev-hub.screener.io',
+      launch_url: 'http://' + process.env.CIRCLE_BRANCH + '.127.0.0.1.xip.io:8080/',
+      selenium_port: 80,
+      selenium_host: 'hub.screener.io',
       desiredCapabilities: {
         browserName: 'chrome',
         build: process.env.CIRCLE_BUILD_NUM,
